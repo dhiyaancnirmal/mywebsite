@@ -13,7 +13,7 @@ const AgeCounter = () => {
       setAge(ageInYears.toFixed(9)); // Set the age with 9 decimal places
     };
 
-    const interval = setInterval(updateAge, 1000); // Update every 1 second
+    const interval = setInterval(updateAge, 100); // Update every 1 second
     updateAge(); // Initial call to set age immediately
     return () => clearInterval(interval); // Clean up on component unmount
   }, [birthDate]);
