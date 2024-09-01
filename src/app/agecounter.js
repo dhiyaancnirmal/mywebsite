@@ -10,7 +10,7 @@ const AgeCounter = () => {
       const now = new Date();
       const diff = now - birthDate; // Difference in milliseconds
       const ageInYears = diff / (1000 * 60 * 60 * 24 * 365.25); // Convert to years
-      setAge(ageInYears.toFixed(2)); // Set the age with 2 decimal places
+      setAge(ageInYears.toFixed(9)); // Set the age with 9 decimal places
     };
 
     const interval = setInterval(updateAge, 1000); // Update every 1 second
@@ -20,7 +20,7 @@ const AgeCounter = () => {
 
   return (
     <div>
-      <p>{age} years</p>
+      <p>{age}</p>
     </div>
   );
 };
