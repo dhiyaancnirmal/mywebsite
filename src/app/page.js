@@ -12,14 +12,16 @@ const HomePage = () => {
     <main className={styles.page}>
       <header className={styles.header}>
         <div className={styles.imageContainer}>
-        <a href="https://dhiyaan.vercel.app"><Image
-            className={styles.image}
-            src="/marks the spot.png"
-            width={300}
-            height={210}
-            priority
-            alt="dhiyaan c nirmal"/>
-            </a>
+          <a href="https://dhiyaan.vercel.app">
+            <Image
+              className={styles.image}
+              src="/marks the spot.png"
+              width={300}
+              height={210}
+              priority
+              alt="dhiyaan c nirmal"
+            />
+          </a>
         </div>
         <nav className={styles.navbar}>
           <a href="/">Home</a>
@@ -29,13 +31,13 @@ const HomePage = () => {
         <hr className={styles.separator} />
         <div className={styles.infoContainer}>
           <div className={styles.infoItem}>
-            <span>📚 Spinoza's Ethics</span>
+            <span>📚 Spinoza&apos;s Ethics</span>
             <div className={styles.tooltip}>Currently Reading</div>
           </div>
 
           <div className={styles.infoItem}>
             <AgeCounter />
-            <spanb> years</spanb>
+            <span> years</span> {/* Fixed tag */}
             <div className={styles.tooltip}>Time on Earth</div>
           </div>
 
@@ -53,7 +55,11 @@ const HomePage = () => {
             priority
             alt="Boundless"
           />
-          <p className={styles.caption}><a href="https://www.instagram.com/mendezmendezart/p/C87mZT5IAlB/"><i>balance</i> by @mendezmendezart</a></p>
+          <p className={styles.caption}>
+            <a href="https://www.instagram.com/mendezmendezart/p/C87mZT5IAlB/">
+              <i>balance</i> by @mendezmendezart
+            </a>
+          </p>
         </div>
       </header>
     
