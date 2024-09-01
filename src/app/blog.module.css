@@ -1,0 +1,14 @@
+/* styles/blog.module.css */
+
+.page {
+    width: var(--max-width);
+    margin: 0 auto;
+    text-align: center;
+    background-color: white; /* White background for blog page */
+    color: black; /* Black text color for blog page */
+  }
+  
+  h1 {
+    margin-top: 20px;
+  }
+  
