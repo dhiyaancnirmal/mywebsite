@@ -68,7 +68,7 @@
 .card p {
   margin: 0;
   opacity: 0.6;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   line-height: 1.5;
   max-width: 30ch;
   text-wrap: balance;
@@ -230,266 +230,766 @@
 .page {
   width: var(--max-width);
   margin: 0 auto;
-  text-align: center; /* Center the content */
-}
-
-.header {
-  text-align: center;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between; /* Align links to the left, center, and right */
-  margin: 10px 0; /* Space around the navigation */
-  padding: 0 20px; /* Padding for spacing */
-}
-
-.navbar a {
-  color: black; /* Black text color for navigation links */
-  padding: 10px 20px; /* Add padding for clickable area */
-  display: inline-block;
-}
-
-.navbar a:hover {
-  background-color: #ddd; /* Light gray background on hover */
-  border-radius: 4px;
-}
-
-.intro {
-  margin-top: 10px; /* Space between navbar and intro text */
-}
-
-.imageContainer {
-  margin-top: 20px; 
-}
-
-.page {
-  display: flex;
-  flex-direction: column;
+  padding: 2rem;
   min-height: 100vh;
-  background-color: white;
-  color: black;
-}
-
-.header {
   display: flex;
   flex-direction: column;
+}
+
+.introSection {
+  display: flex;
   align-items: center;
-  text-align: center;
+  gap: 2rem;
+  margin: 2rem 0;
+  padding: 0 2rem;
 }
 
-.imageContainer {
-  margin-bottom: 20px;
+.profileImageContainer {
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
 }
 
-.image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px; /* Optional: for rounded corners */
+.profileImage {
+  object-fit: cover;
+}
+
+.introText {
+  flex: 1;
+}
+
+.profileContainer {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.profileImage {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.circularImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.greeting {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.introText {
+  flex: 1;
+}
+
+.introText h1 {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+
+.introText p {
+  line-height: 1.6;
+  color: #666;
 }
 
 .navbar {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0px 0;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+  padding: 0 1rem;
 }
 
 .navbar a {
   text-decoration: none;
   color: black;
-  padding: 10px;
-  font-weight: bold;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
 }
 
 .navbar a:hover {
-  background-color: #ddd;
+  background-color: #f0f0f0;
+  border-radius: 4px;
 }
 
 .separator {
   width: 100%;
-  border: 1px solid rgb(227, 0, 0);
-  margin: 10px 0;
+  border: 1px solid black;
+  margin: 1rem 0;
 }
 
-.infoContainer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 700px;
-  width: 100%;
-  margin: 5px auto;
-  gap: 90px;
+.experiencesSection {
+  margin: 4rem 0;
 }
 
-.infoItem {
-  position: relative;
-  cursor: pointer;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  gap: 8px; /* Space between icon and text */
-  flex: 1;
-}
-
-.infoItem .tooltip {
-  visibility: hidden;
-  background-color: rgb(255, 0, 0);
-  color: #ffffff;
+.experiencesSection h2 {
   text-align: center;
-  padding: 5px;
-  border-radius: 5px;
-  position: absolute;
-  z-index: 1;
-  bottom: 125%; /* Position the tooltip above the text */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 150px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  transition: opacity 0.3s, visibility 0.3s;
+  margin-bottom: 2rem;
 }
 
-.infoItem:hover .tooltip {
-  visibility: visible;
-  opacity: 1;
-}
-
-
-
-.intro {
+.experienceGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
   width: 100%;
-  max-width: 700px;
-  text-align: left; /* Align text to the left */
-  margin: 10px auto;
 }
 
-.introText {
-  font-size: 1rem; /* Small/normal size text */
-  margin-bottom: 10px;
+.experienceCard {
+  width: 100%;
+  height: 180px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 2rem;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: white;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  transform-origin: center;
+  will-change: transform;
 }
 
-.name {
-  font-size: 2rem; /* Large text */
+.experienceCard > * {
+  pointer-events: none;
+}
+
+.arxivButton,
+.cslButton {
+  position: relative;
+  pointer-events: auto;
+  cursor: pointer;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.arxivButton::after,
+.cslButton::after {
+  content: '→';
+  opacity: 0;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+
+.arxivButton:hover::after,
+.cslButton:hover::after {
+  opacity: 1;
+  transform: translateX(2px);
+}
+
+.arxivButton {
+  background-color: #B31B1B;
+  color: white;
+}
+
+.arxivButton:hover {
+  background-color: #8A1414;
+}
+
+.cslButton {
+  background-color: #2563eb;
+  color: white;
+}
+
+.cslButton:hover {
+  background-color: #1d4ed8;
+}
+
+.experienceCard:not(.expanded) {
+  cursor: text;
+}
+
+.experienceCard:not(.expanded):hover {
+  transform: scale(1.02);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.experienceContent {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  padding-right: 140px;
+  cursor: text;
+}
+
+.experienceHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: nowrap;
+}
+
+.titleWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.arrowIcon {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  color: #2563eb;
+}
+
+.experienceCard:hover .arrowIcon {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.organizationTitle {
+  font-size: 1.2rem;
   font-weight: bold;
-  margin: 0;
+  color: #333;
+  margin-right: 0.3rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: text;
+}
+
+.timeframe {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+  margin: 0 0.75rem;
+  white-space: nowrap;
+}
+
+.positionInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.orgDescription {
+  display: none;
+}
+
+.experienceCard.expanded .orgDescription {
+  display: block;
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.summaryText {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+
+.positionTitle {
+  font-size: 1rem;
+  color: #333;
+  font-weight: normal;
+}
+
+.hours {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+}
+
+.bodyText {
+  color: #444;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  cursor: text;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bulletPoints {
+  display: none;
+}
+
+.experienceCard.expanded .bulletPoints {
+  display: block;
+  margin: 0.5rem 0;
+  padding-left: 1.25rem;
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.experienceImageContainer {
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  transition: all 0.3s ease;
+}
+
+.experienceImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.experienceCard.expanded {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  width: 95vw;
+  height: 90vh;
+  max-width: 1100px;
+  max-height: 600px;
+  z-index: 1000;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  padding: 1.5rem;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 40fr 60fr;
+  gap: 1.5rem;
+  background: white;
+  pointer-events: auto;
+  cursor: default;
+  transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+}
+
+.experienceCard.expanded .experienceContent {
+  overflow-y: auto;
+  max-height: 100%;
+  padding-right: 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+
+.experienceCard.expanded .bodyText {
+  -webkit-line-clamp: unset;
+  line-clamp: unset;
+  overflow: visible;
+}
+
+.experienceCard.expanded .bulletPoints {
+  display: block;
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+}
+
+.experienceCard.expanded .experienceImageContainer {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+.expandIcon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.expandIcon:hover {
+  color: #000;
+}
+
+.scrollIndicator {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.9rem;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.bounceIcon {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.overlay.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.arxivButton {
+  background-color: #B31B1B; /* arXiv red */
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-left: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.arxivButton:hover {
+  background-color: #8A1414; /* Darker red on hover */
+}
+
+.contactSection {
+  text-align: center;
+  margin: 4rem 0;
 }
 
 .footer {
-  padding: 40px 0; /* Add padding to create space inside the footer */
-  text-align: center; /* Center the text and icons */
-  background-color: #f8f9fa; /* Light background color */
-  margin-top: 50px; /* Space above the footer */
-  border-top: 1px solid #e9ecef; /* Subtle border on top */
-}
-
-.footer p {
-  margin: 0;
-  font-size: 14px;
-  color: #6c757d;
+  margin-top: auto;
+  padding: 2rem 0;
+  text-align: center;
+  border-top: 1px solid #eee;
 }
 
 .socialLinks {
   display: flex;
-  justify-content: center; /* Center the icons horizontally */
-  gap: 30px; /* Space between each icon */
-  margin-top: 20px; /* Space between the text and the icons */
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
 }
 
 .socialLinks a {
-  color: #6c757d; /* Icon and text color */
-  font-size: 18px;
-  text-decoration: none; /* Remove underline */
-  transition: color 0.3s ease; /* Smooth transition for hover effect */
+  color: #666;
+  font-size: 1.5rem;
+  transition: color 0.2s;
 }
 
 .socialLinks a:hover {
-  color: #343a40; /* Darker color on hover */
+  color: #000;
 }
 
-
-/* Mobile Styles */
-@media (max-width: 700px) {
-  .content {
-    padding: 4rem;
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-    margin-bottom: 120px;
-    max-width: 320px;
+@media (max-width: 768px) {
+  .profileContainer {
+    flex-direction: column;
     text-align: center;
   }
 
-  .card {
-    padding: 1rem 2.5rem;
-  }
-
-  .card h2 {
-    margin-bottom: 0.5rem;
-  }
-
-  .center {
-    padding: 8rem 0 6rem;
-  }
-
-  .center::before {
-    transform: none;
-    height: 300px;
-  }
-
-  .description {
-    font-size: 0.8rem;
-  }
-
-  .description a {
-    padding: 1rem;
-  }
-
-  .description p,
-  .description div {
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    width: 100%;
-  }
-
-  .description p {
-    align-items: center;
-    inset: 0 0 auto;
-    padding: 2rem 1rem 1.4rem;
-    border-radius: 0;
-    border: none;
-    border-bottom: 1px solid rgba(var(--callout-border-rgb), 0.25);
-    background: linear-gradient(
-      to bottom,
-      rgba(var(--background-start-rgb), 1),
-      rgba(var(--callout-rgb), 0.5)
-    );
-    background-clip: padding-box;
-    backdrop-filter: blur(24px);
-  }
-
-  .description div {
-    align-items: flex-end;
-    pointer-events: none;
-    inset: auto 0 0;
-    padding: 2rem;
-    height: 200px;
-    background: linear-gradient(
-      to bottom,
-      transparent 0%,
-      rgb(var(--background-end-rgb)) 40%
-    );
-    z-index: 1;
+  .experienceGrid {
+    grid-template-columns: 1fr;
   }
 }
 
-/* Tablet and Smaller Desktop */
-@media (min-width: 701px) and (max-width: 1120px) {
-  .grid {
-    grid-template-columns: repeat(2, 50%);
+/* Add these new styles for the business card */
+@keyframes rotate {
+  from {
+    transform: rotate(360deg);
   }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.businessCardSection {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.businessCard {
+  position: relative;
+  width: 525px;
+  height: 300px;
+  background-color: #fff;
+  box-shadow: 0px 0px 15px rgba(73, 73, 73, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.rotateEffect {
+  transform: scale(0.6) rotate(10deg);
+  transition: transform 1.5s ease;
+}
+
+.cardBackground {
+  object-fit: cover;
+  z-index: 1;
+}
+
+.overlayText {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.centeredText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "AmericanPsycho", sans-serif;
+  font-size: 27px;
+  color: black;
+  margin: 0;
+  text-align: center;
+}
+
+.subtext {
+  position: absolute;
+  top: 58%;  
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "AmericanPsycho", sans-serif;
+  font-size: 13px;
+  color: black;
+}
+
+.contactLink {
+  text-decoration: none;
+  color: black;
+  outline: none;
+}
+
+.contactLink:hover {
+  text-decoration: underline;
+}
+
+.topLeftText {
+  position: absolute;
+  top: 5px;  /* Changed from -10px to 5px (15px down) */
+  left: 15px;
+  color: black;
+  font-family: "AmericanPsycho", sans-serif;
+  font-size: 17px;
+}
+
+.topRightText {
+  position: absolute;
+  top: 8px;  /* Changed from -7px to 8px (15px down) */
+  right: 15px;
+  color: black;
+  font-family: "AmericanPsycho", sans-serif;
+  font-size: 17px;
+}
+
+.bottomCenterText {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  color: black;
+  font-family: "AmericanPsycho", sans-serif;
+  font-size: 12px;
+}
+
+.scrollIndicator {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transform: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #333;
+  font-size: 14px;
+  animation: bounce 2s infinite;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.scrollIndicator.hidden {
+  opacity: 0;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.portfolioSection {
+  min-height: 100vh;
+  background-color: white;
+}
+
+.cslButton {
+  background-color: #bf5700; /* UT Orange */
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-left: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.cslButton:hover {
+  background-color: #a94c00; /* Darker orange on hover */
+}
+
+.experienceCard.expanded .experienceImageContainer {
+  height: 100%;
+  border-radius: 0;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.experienceCard.expanded .experienceContent {
+  overflow-y: auto;
+  max-height: calc(80vh - 6rem);
+  padding-right: 2rem;
+  padding-bottom: 1rem;
+  flex: 1;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+}
+
+.experienceCard.expanded .experienceContent::-webkit-scrollbar {
+  width: 8px;
+}
+
+.experienceCard.expanded .experienceContent::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.experienceCard.expanded .experienceContent::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+.experienceCard.expanded .experienceContent::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.contactForm {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.formGroup textarea {
+  resize: vertical;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 0.75rem;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submitButton:hover {
+  background: #0056b3;
 }
